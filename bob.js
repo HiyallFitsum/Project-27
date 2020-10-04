@@ -1,23 +1,21 @@
-class Bob{
-    constructor(x, y,) {
-      var options = {
-        isStatic:true,
-          
-      }
-      this.bob = Matter.Bodies.circle(x, y, 80, options);
-      this.bob.diameter = 80;
-      
-      World.add(world, this.bob);
+class Bob {
+  constructor(x,y) {
+    var options = {
+        isStatic: false,
+        restitution: 1.125,
     }
-    display(){
-      var pos =this.bob.position;
-      push();
-      translate(pos.x, pos.y);
-      ellipseMode(CENTER);
-      //strokeWeight(4)
-      //stroke("green");
-      fill("purple");
-      ellipse(0, 0, this.bob.diameter);
-      pop();
-    }
-  };
+    this.body = Bodies.circle(x,y,40, options);
+    this.diameter = 40;
+    World.add(world, this.body);
+  }
+  display(){
+    var pos =this.body.position;
+    //imageMode(CENTER);
+    push();
+    ellipseMode(CENTER);
+    fill("yellow");
+    ellipse(pos.x,pos.y, 80);
+    //image(this.image, pos.x, pos.y, 40, 40);
+    pop();
+  }
+};
