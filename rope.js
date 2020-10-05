@@ -1,4 +1,4 @@
-class Rope {
+class rope {
     constructor(body1, body2, offsetX, offsetY){
         this.offsetX=offsetX
         this.offsetY=offsetY
