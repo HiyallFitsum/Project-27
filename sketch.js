@@ -17,6 +17,7 @@ function setup() {
 
 	//Create the Bodies Here.
 	roofObject = new Roof(390, 100, 440, 50);
+	//bobObject1 = new Bob(-150, 220);
 	bobObject1 = new Bob(220, 500);
 	//chain = new Chain(bobObject1.body,{x:220, y:100});
 	rope1=new rope(bobObject1.body,roofObject.body,-bobDiameter*2, 0)  
@@ -64,3 +65,14 @@ function draw() {
 function mouseDragged(){
 	Matter.Body.setPosition(bobObject1.body, {x: mouseX, y: mouseY});
 	}
+
+	function keyPressed(){
+
+		if(keyCode === UP_ARROW){
+		
+			Matter.Body.applyForce(bobObject1.body, bobObject1.body.position,{x:10, y: -50});
+			
+		}
+		
+		}		
+	
